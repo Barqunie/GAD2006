@@ -1,0 +1,58 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+
+#include "COABaseCharacter.h"
+#include "GameFramework/CharacterMovementComponent.h"
+
+// Sets default values
+ACOABaseCharacter::ACOABaseCharacter()
+{
+    PrimaryActorTick.bCanEverTick = true;
+
+    bDead = false;
+    Health = 100.0f;
+    MaxHealth = 100.0f;
+    HealingRate = 0.0f;
+    WalkSpeed = 100.0f;
+
+    GetCharacterMovement()->bOrientRotationToMovement = true;
+    GetCharacterMovement()->RotationRate = FRotator(0.0f, 540.0f, 0.0f);
+    GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+}
+
+// Called when the game starts or when spawned
+void ACOABaseCharacter::BeginPlay()
+{
+    Super::BeginPlay();
+
+}
+
+// Called every frame
+void ACOABaseCharacter::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+
+    if (!bDead)
+    {
+        Health = FMath::Min(MaxHealth, Health + HealingRate * DeltaTime);
+    }
+
+    if (bRunning && !bStaminaDrained)
+    {
+        Stamina -= StaminaDrainRate * DeltaTime;
+        if (Stamina <= 0.0f)
+        {
+            Stamina = 0.0f;
+            bStaminaDrained = true;
+            GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+        }
+    }
+    else if (!bRunning)
+    {
+        Stamina = FMath::Min(MaxStamina, Stamina + StaminaGainRate * DeltaTime);
+        if (Stamina >= MaxStamina)
+        {
+            bStaminaDrained = false;
+        }
+    }
+}
