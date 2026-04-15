@@ -17,6 +17,41 @@ ACOAAvatar::ACOAAvatar()
     mCamera->bUsePawnControlRotation = false;
 }
 
+void ACOAAvatar::BeginPlay()
+{
+    Super::BeginPlay();
+
+    GetWorldTimerManager().SetTimer(
+        StaminaTimerHandle,
+        this,
+        &ACOAAvatar::UpdateStamina,
+        StaminaTickInterval,
+        true
+    );
+}
+
+void ACOAAvatar::UpdateStamina()
+{
+    if (bRunning && !bStaminaDrained)
+    {
+        Stamina -= StaminaDrainRate * StaminaTickInterval;
+        if (Stamina <= 0.0f)
+        {
+            Stamina = 0.0f;
+            bStaminaDrained = true;
+            GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+        }
+    }
+    else if (!bRunning)
+    {
+        Stamina = FMath::Min(MaxStamina, Stamina + StaminaGainRate * StaminaTickInterval);
+        if (Stamina >= MaxStamina)
+        {
+            bStaminaDrained = false;
+        }
+    }
+}
+
 void ACOAAvatar::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -41,6 +76,8 @@ void ACOAAvatar::LookUp(float Value)
 
 void ACOAAvatar::MoveForward(float Value)
 {
+    if (!Controller) return;
+
     FRotator Rotation = Controller->GetControlRotation();
     FRotator YawRotation(0.0f, Rotation.Yaw, 0.0f);
     FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
@@ -49,6 +86,8 @@ void ACOAAvatar::MoveForward(float Value)
 
 void ACOAAvatar::MoveRight(float Value)
 {
+    if (!Controller) return;
+
     FRotator Rotation = Controller->GetControlRotation();
     FRotator YawRotation(0.0f, Rotation.Yaw, 0.0f);
     FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);

@@ -24,7 +24,6 @@ ACOABaseCharacter::ACOABaseCharacter()
 void ACOABaseCharacter::BeginPlay()
 {
     Super::BeginPlay();
-
 }
 
 // Called every frame
@@ -35,24 +34,5 @@ void ACOABaseCharacter::Tick(float DeltaTime)
     if (!bDead)
     {
         Health = FMath::Min(MaxHealth, Health + HealingRate * DeltaTime);
-    }
-
-    if (bRunning && !bStaminaDrained)
-    {
-        Stamina -= StaminaDrainRate * DeltaTime;
-        if (Stamina <= 0.0f)
-        {
-            Stamina = 0.0f;
-            bStaminaDrained = true;
-            GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
-        }
-    }
-    else if (!bRunning)
-    {
-        Stamina = FMath::Min(MaxStamina, Stamina + StaminaGainRate * DeltaTime);
-        if (Stamina >= MaxStamina)
-        {
-            bStaminaDrained = false;
-        }
     }
 }
