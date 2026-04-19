@@ -73,6 +73,9 @@ Plugins/**/Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 
+
+
+#COA
 COA/Content/LevelPrototyping/
 COA/Content/__ExternalActors__/
 COA/Content/__ExternalObjects__/
@@ -80,3 +83,15 @@ COA/Content/Characters/
 COA/Content/ThirdPerson/Lvl_ThirdPerson.umap
 COA/Content/ThirdPerson/MI_ThirdPersonColWay.uasset
 
+
+#LabWork2
+LabWork2/Content/Collections
+LabWork2/Content/UI
+LabWork2/Content/Meshes
+LabWork2/Content/Materials
+LabWork2/Content/Developers
+LabWork2/Binaries
+LabWork2/Config
+LabWork2/DerivedDataCache
+LabWork2/Saved
+LabWork2/LabWork2.sln

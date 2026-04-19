@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\baris\\desktop\\projeler\\gad2006\\labwork2\\source\\labwork2\\private\\gamegrid.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\baris\\desktop\\projeler\\gad2006\\labwork2\\intermediate\\build\\win64\\x64\\labwork2editor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderoldest.h.pch",
+        "Includes": [
+            "c:\\users\\baris\\desktop\\projeler\\gad2006\\labwork2\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\labwork2\\definitions.labwork2.h",
+            "c:\\users\\baris\\desktop\\projeler\\gad2006\\labwork2\\source\\labwork2\\private\\gamegrid.h",
+            "c:\\users\\baris\\desktop\\projeler\\gad2006\\labwork2\\source\\labwork2\\private\\gameslot.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\boxcomponent.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.4\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\boxcomponent.generated.h",
+            "c:\\users\\baris\\desktop\\projeler\\gad2006\\labwork2\\source\\labwork2\\private\\unitbase.h",
+            "c:\\users\\baris\\desktop\\projeler\\gad2006\\labwork2\\intermediate\\build\\win64\\unrealeditor\\inc\\labwork2\\uht\\unitbase.generated.h",
+            "c:\\users\\baris\\desktop\\projeler\\gad2006\\labwork2\\intermediate\\build\\win64\\unrealeditor\\inc\\labwork2\\uht\\gameslot.generated.h",
+            "c:\\users\\baris\\desktop\\projeler\\gad2006\\labwork2\\intermediate\\build\\win64\\unrealeditor\\inc\\labwork2\\uht\\gamegrid.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
