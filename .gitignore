@@ -85,6 +85,7 @@ COA/Content/ThirdPerson/MI_ThirdPersonColWay.uasset
 
 
 #LabWork2
+
 LabWork2/Content/Collections
 LabWork2/Content/UI
 LabWork2/Content/Meshes
@@ -97,6 +98,8 @@ LabWork2/Saved
 LabWork2/Intermediate
 LabWork2/LabWork2.sln
 LabWork2/.vsconfig
+
+#LabWork3
 
 LabWork3/Content/Collections
 LabWork3/Content/UI
