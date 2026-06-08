@@ -50,6 +50,9 @@ public:
 	void StartRunning();
 	void StopRunning();
 
+	UPROPERTY(BlueprintReadWrite)
+	float MovementScale;
+
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 private:
